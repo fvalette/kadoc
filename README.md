@@ -3,16 +3,16 @@ SPDX-FileCopyrightText: 2024 Ledger SAS
 SPDX-License-Identifier: Apache-2.0
 -->
 
-# outpost-svd
+# sentry-svd
 Collection of SVD files with meson recipe to handle them
 
-[![REUSE status](https://api.reuse.software/badge/github.com/outpost-os/outpost-svd)](https://api.reuse.software/info/github.com/outpost-os/outpost-svd)
+[![REUSE status](https://api.reuse.software/badge/github.com/camelot-os/kadoc)](https://api.reuse.software/badge/github.com/camelot-os/kadoc)
 
 ## Prerequisits
 
 Python3 is required for this meson project with the following packages:
- - Jinja2
- - svd2json (Ledger package, see https://git.orange.ledgerlabs.net/outpost/python-svd2json)
+ - [Jinja2](https://pypi.org/project/Jinja2/)
+ - [svd2json](https://pypi.org/project/svd2json/)
 
 ## Project options
  - `svd`: string, svd filename to use (without `.svd` extension)
