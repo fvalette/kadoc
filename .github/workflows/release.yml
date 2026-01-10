@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2026 H2Lab Development Team
+# SPDX-License-Identifier: Apache-2.0
+
+name: kadoc sdist release
+
+on:
+  push:
+    tags:
+      - v**
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dist:
+    name: generate sdist
+    runs-on: ubuntu-latest
+    steps:
+      - name: XXX git permission quirk XXX
+        run: |
+          git config --global --add safe.directory $GITHUB_WORKSPACE
+        shell: bash
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          set-safe-directory: true
+      - name: deploy local deps
+        run: |
+          pip install meson>=1.5
+      - name: build sdist tarball
+        run: |
+          meson setup builddir && meson dist -C builddir
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kadoc
+          path: builddir/meson-dist/kadoc-*.*
+
+  publish_release:
+    needs: dist
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+    # required to allow gh to work
+    - uses: actions/checkout@v4
+    # download all previously delivered artifacts of the current run. This will
+    # store multiple tarballs locally
+    - name: Retrieve Artifact
+      uses: actions/download-artifact@v4
+      with:
+        path: dist
+        merge-multiple: true
+    - run: |
+        ls dist
+      shell: bash
+    # forge attestation for release
+    - uses: actions/attest@v2
+      with:
+        subject-path:  dist/*.*
+        predicate-type: 'https://in-toto.io/attestation/release/v0.1'
+        predicate: '{}'
+    - name: deploy release
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh release create ${{ github.ref_name }} --title ${{ github.ref_name }}  --generate-notes dist/*.tar.xz
+      shell: bash
