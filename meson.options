@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-option('svd', type: 'string', description: 'svd filename to use (without .svd extension')
+option('svd', type: 'string', value: 'stm32u5a5', description: 'svd filename to use (without .svd extension')
 option('with-tests-only', type: 'boolean', value: false, description:
 'with unittests, this disables the regular targets,' +
 'use for test purpose only')
