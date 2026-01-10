@@ -28,7 +28,7 @@ jobs:
           set-safe-directory: true
       - name: deploy local deps
         run: |
-          pip install meson>=1.5
+          pip3 install -r requirements.txt
       - name: build sdist tarball
         run: |
           meson setup builddir && meson dist -C builddir
