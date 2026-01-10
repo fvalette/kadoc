@@ -18,4 +18,5 @@ svd_files = files()
 
 # Manufacturer subdir list in alpha order
 subdir('st')
-subdir('rpi')
+# NOTE: Raspberry pi not yet being supported, it is not included as the rpi SVD file
+# is not, by now, valid
