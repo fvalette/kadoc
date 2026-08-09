@@ -1,12 +1,13 @@
 <!--
 SPDX-FileCopyrightText: 2024 Ledger SAS
+SPDX-FileCopyrightText: 2026 H2Lab Development Team
 SPDX-License-Identifier: Apache-2.0
 -->
 
 # sentry-svd
 Collection of SVD files with meson recipe to handle them
 
-[![REUSE status](https://api.reuse.software/badge/github.com/camelot-os/kadoc)](https://api.reuse.software/badge/github.com/camelot-os/kadoc)
+[![REUSE status](https://github.com/camelot-os/kadoc/actions/workflows/reuse.yml/badge.svg?branch=main&event=push)](https://github.com/camelot-os/kadoc/actions/workflows/reuse.yml)
 
 ## Prerequisits
 
