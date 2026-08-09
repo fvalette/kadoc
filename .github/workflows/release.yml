@@ -21,7 +21,7 @@ jobs:
         run: |
           git config --global --add safe.directory $GITHUB_WORKSPACE
         shell: bash
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -33,7 +33,7 @@ jobs:
         run: |
           meson setup builddir && meson dist -C builddir
         shell: bash
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: kadoc
           path: builddir/meson-dist/kadoc-*.*
@@ -47,11 +47,11 @@ jobs:
       attestations: write
     steps:
     # required to allow gh to work
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
     # download all previously delivered artifacts of the current run. This will
     # store multiple tarballs locally
     - name: Retrieve Artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
       with:
         path: dist
         merge-multiple: true
@@ -59,7 +59,7 @@ jobs:
         ls dist
       shell: bash
     # forge attestation for release
-    - uses: actions/attest@v2
+    - uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
       with:
         subject-path:  dist/*.*
         predicate-type: 'https://in-toto.io/attestation/release/v0.1'
