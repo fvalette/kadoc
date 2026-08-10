@@ -24,19 +24,7 @@ svd_tests_peripherals = [
     'SPI',
 ]
 
-svd_tested_soc = []
-
-foreach f: svd_files
-    soc = fs.stem(fs.name(f))
-
-    svd_tested_soc += soc
-
-    svd_json = custom_target('System View Description @0@ json'.format(soc),
-        input: f,
-        output: '@BASENAME@.json',
-        command: [ svd2json, '--svd', '@INPUT@', '@OUTPUT@' ],
-    )
-
+foreach soc, svd_json: json_dict
     irq_defs_h = custom_target('@0@_irq_defs_h'.format(soc),
         input: irq_defs_in,
         output: '@0@_@BASENAME@'.format(soc),
@@ -80,5 +68,3 @@ foreach f: svd_files
     test('@0@'.format(soc), test_exe)
 
 endforeach
-
-summary('Verified soc(s)', svd_tested_soc)

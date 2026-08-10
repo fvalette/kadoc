@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2024 Ledger SAS
-# SPDX-FileCopyrightText: 2025 H2Lab
+# SPDX-FileCopyrightText: 2025 - 2026 H2Lab Development Team
 #
 # SPDX-License-Identifier: Apache-2.0
 
-meson
+meson>=1.10
 xmlschema
 svd2json>=0.1.6
 jinja2

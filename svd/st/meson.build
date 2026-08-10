@@ -79,9 +79,3 @@ svd_files += files(
     'stm32wl5x_cm4.svd',
     'stm32wle5_cm4.svd',
 )
-
-
-install_data(
-  svd_files,
-  install_dir :  get_option('datadir') + '/svd/st'
-)

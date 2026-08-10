@@ -1,0 +1,9 @@
+# Patch series for stm32u5a5
+#
+# Naming convention: NNNN-verb-peripheral-description.patch
+#
+# NOTE: if the manufacturer SVD requires formatting, 0001-format.patch
+#       MUST be the first entry so all subsequent patches are human-readable.
+#       stm32u5a5.svd is already consistently formatted; no format patch needed.
+
+0001-rcc-strip-register-name-prefix.patch

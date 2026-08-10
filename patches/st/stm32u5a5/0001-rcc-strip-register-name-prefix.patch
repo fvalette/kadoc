@@ -1,0 +1,470 @@
+--- a/stm32u5a5.svd
++++ b/stm32u5a5.svd
+@@ -190320,7 +190320,7 @@
+       </interrupt>
+       <registers>
+           <register>
+-            <name>RCC_CR</name>
++            <name>CR</name>
+             <displayName>RCC_CR</displayName>
+             <description>RCC clock control register</description>
+             <addressOffset>0x000</addressOffset>
+@@ -190861,7 +190861,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_ICSCR1</name>
++            <name>ICSCR1</name>
+             <displayName>RCC_ICSCR1</displayName>
+             <description>RCC internal clock sources calibration register 1</description>
+             <addressOffset>0x008</addressOffset>
+@@ -191133,7 +191133,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_ICSCR2</name>
++            <name>ICSCR2</name>
+             <displayName>RCC_ICSCR2</displayName>
+             <description>RCC internal clock sources calibration register 2</description>
+             <addressOffset>0x00C</addressOffset>
+@@ -191176,7 +191176,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_ICSCR3</name>
++            <name>ICSCR3</name>
+             <displayName>RCC_ICSCR3</displayName>
+             <description>RCC internal clock sources calibration register 3</description>
+             <addressOffset>0x010</addressOffset>
+@@ -191203,7 +191203,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CRRCR</name>
++            <name>CRRCR</name>
+             <displayName>RCC_CRRCR</displayName>
+             <description>RCC clock recovery RC register</description>
+             <addressOffset>0x014</addressOffset>
+@@ -191222,7 +191222,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CFGR1</name>
++            <name>CFGR1</name>
+             <displayName>RCC_CFGR1</displayName>
+             <description>RCC clock configuration register 1</description>
+             <addressOffset>0x01C</addressOffset>
+@@ -191432,7 +191432,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CFGR2</name>
++            <name>CFGR2</name>
+             <displayName>RCC_CFGR2</displayName>
+             <description>RCC clock configuration register 2</description>
+             <addressOffset>0x020</addressOffset>
+@@ -191689,7 +191689,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CFGR3</name>
++            <name>CFGR3</name>
+             <displayName>RCC_CFGR3</displayName>
+             <description>RCC clock configuration register 3</description>
+             <addressOffset>0x024</addressOffset>
+@@ -191771,7 +191771,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL1CFGR</name>
++            <name>PLL1CFGR</name>
+             <displayName>RCC_PLL1CFGR</displayName>
+             <description>RCC PLL1 configuration register</description>
+             <addressOffset>0x028</addressOffset>
+@@ -191985,7 +191985,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL2CFGR</name>
++            <name>PLL2CFGR</name>
+             <displayName>RCC_PLL2CFGR</displayName>
+             <description>RCC PLL2 configuration register</description>
+             <addressOffset>0x02C</addressOffset>
+@@ -192142,7 +192142,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL3CFGR</name>
++            <name>PLL3CFGR</name>
+             <displayName>RCC_PLL3CFGR</displayName>
+             <description>RCC PLL3 configuration register</description>
+             <addressOffset>0x030</addressOffset>
+@@ -192298,7 +192298,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL1DIVR</name>
++            <name>PLL1DIVR</name>
+             <displayName>RCC_PLL1DIVR</displayName>
+             <description>RCC PLL1 dividers register</description>
+             <addressOffset>0x034</addressOffset>
+@@ -192458,7 +192458,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL1FRACR</name>
++            <name>PLL1FRACR</name>
+             <displayName>RCC_PLL1FRACR</displayName>
+             <description>RCC PLL1 fractional divider register</description>
+             <addressOffset>0x038</addressOffset>
+@@ -192485,7 +192485,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL2DIVR</name>
++            <name>PLL2DIVR</name>
+             <displayName>RCC_PLL2DIVR</displayName>
+             <description>RCC PLL2 dividers configuration register</description>
+             <addressOffset>0x03C</addressOffset>
+@@ -192645,7 +192645,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL2FRACR</name>
++            <name>PLL2FRACR</name>
+             <displayName>RCC_PLL2FRACR</displayName>
+             <description>RCC PLL2 fractional divider register</description>
+             <addressOffset>0x040</addressOffset>
+@@ -192672,7 +192672,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL3DIVR</name>
++            <name>PLL3DIVR</name>
+             <displayName>RCC_PLL3DIVR</displayName>
+             <description>RCC PLL3 dividers configuration register</description>
+             <addressOffset>0x044</addressOffset>
+@@ -192832,7 +192832,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PLL3FRACR</name>
++            <name>PLL3FRACR</name>
+             <displayName>RCC_PLL3FRACR</displayName>
+             <description>RCC PLL3 fractional divider register</description>
+             <addressOffset>0x048</addressOffset>
+@@ -192859,7 +192859,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CIER</name>
++            <name>CIER</name>
+             <displayName>RCC_CIER</displayName>
+             <description>RCC clock interrupt enable register</description>
+             <addressOffset>0x050</addressOffset>
+@@ -193090,7 +193090,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CIFR</name>
++            <name>CIFR</name>
+             <displayName>RCC_CIFR</displayName>
+             <description>RCC clock interrupt flag register</description>
+             <addressOffset>0x054</addressOffset>
+@@ -193341,7 +193341,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CICR</name>
++            <name>CICR</name>
+             <displayName>RCC_CICR</displayName>
+             <description>RCC clock interrupt clear register</description>
+             <addressOffset>0x058</addressOffset>
+@@ -193448,7 +193448,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB1RSTR</name>
++            <name>AHB1RSTR</name>
+             <displayName>RCC_AHB1RSTR</displayName>
+             <description>RCC AHB1 peripheral reset register</description>
+             <addressOffset>0x060</addressOffset>
+@@ -193683,7 +193683,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB2RSTR1</name>
++            <name>AHB2RSTR1</name>
+             <displayName>RCC_AHB2RSTR1</displayName>
+             <description>RCC AHB2 peripheral reset register 1</description>
+             <addressOffset>0x064</addressOffset>
+@@ -194167,7 +194167,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB2RSTR2</name>
++            <name>AHB2RSTR2</name>
+             <displayName>RCC_AHB2RSTR2</displayName>
+             <description>RCC AHB2 peripheral reset register 2</description>
+             <addressOffset>0x068</addressOffset>
+@@ -194261,7 +194261,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB3RSTR</name>
++            <name>AHB3RSTR</name>
+             <displayName>RCC_AHB3RSTR</displayName>
+             <description>RCC AHB3 peripheral reset register</description>
+             <addressOffset>0x06C</addressOffset>
+@@ -194372,7 +194372,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB1RSTR1</name>
++            <name>APB1RSTR1</name>
+             <displayName>RCC_APB1RSTR1</displayName>
+             <description>RCC APB1 peripheral reset register 1</description>
+             <addressOffset>0x074</addressOffset>
+@@ -194685,7 +194685,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB1RSTR2</name>
++            <name>APB1RSTR2</name>
+             <displayName>RCC_APB1RSTR2</displayName>
+             <description>RCC APB1 peripheral reset register 2</description>
+             <addressOffset>0x078</addressOffset>
+@@ -194819,7 +194819,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB2RSTR</name>
++            <name>APB2RSTR</name>
+             <displayName>RCC_APB2RSTR</displayName>
+             <description>RCC APB2 peripheral reset register</description>
+             <addressOffset>0x07C</addressOffset>
+@@ -195095,7 +195095,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB3RSTR</name>
++            <name>APB3RSTR</name>
+             <displayName>RCC_APB3RSTR</displayName>
+             <description>RCC APB3 peripheral reset register</description>
+             <addressOffset>0x080</addressOffset>
+@@ -195306,7 +195306,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB1ENR</name>
++            <name>AHB1ENR</name>
+             <displayName>RCC_AHB1ENR</displayName>
+             <description>RCC AHB1 peripheral clock enable register</description>
+             <addressOffset>0x088</addressOffset>
+@@ -195664,7 +195664,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB2ENR1</name>
++            <name>AHB2ENR1</name>
+             <displayName>RCC_AHB2ENR1</displayName>
+             <description>RCC AHB2 peripheral clock enable register 1</description>
+             <addressOffset>0x08C</addressOffset>
+@@ -196209,7 +196209,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB2ENR2</name>
++            <name>AHB2ENR2</name>
+             <displayName>RCC_AHB2ENR2</displayName>
+             <description>RCC AHB2 peripheral clock enable register 2</description>
+             <addressOffset>0x090</addressOffset>
+@@ -196345,7 +196345,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB3ENR</name>
++            <name>AHB3ENR</name>
+             <displayName>RCC_AHB3ENR</displayName>
+             <description>RCC AHB3 peripheral clock enable register</description>
+             <addressOffset>0x094</addressOffset>
+@@ -196516,7 +196516,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB1ENR1</name>
++            <name>APB1ENR1</name>
+             <displayName>RCC_APB1ENR1</displayName>
+             <description>RCC APB1 peripheral clock enable register 1</description>
+             <addressOffset>0x09C</addressOffset>
+@@ -196849,7 +196849,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB1ENR2</name>
++            <name>APB1ENR2</name>
+             <displayName>RCC_APB1ENR2</displayName>
+             <description>RCC APB1 peripheral clock enable register 2</description>
+             <addressOffset>0x0A0</addressOffset>
+@@ -196983,7 +196983,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB2ENR</name>
++            <name>APB2ENR</name>
+             <displayName>RCC_APB2ENR</displayName>
+             <description>RCC APB2 peripheral clock enable register</description>
+             <addressOffset>0x0A4</addressOffset>
+@@ -197259,7 +197259,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB3ENR</name>
++            <name>APB3ENR</name>
+             <displayName>RCC_APB3ENR</displayName>
+             <description>RCC APB3 peripheral clock enable register</description>
+             <addressOffset>0x0A8</addressOffset>
+@@ -197490,7 +197490,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB1SMENR</name>
++            <name>AHB1SMENR</name>
+             <displayName>RCC_AHB1SMENR</displayName>
+             <description>RCC AHB1 peripheral clock enable in Sleep and Stop modes register</description>
+             <addressOffset>0x0B0</addressOffset>
+@@ -197868,7 +197868,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB2SMENR1</name>
++            <name>AHB2SMENR1</name>
+             <displayName>RCC_AHB2SMENR1</displayName>
+             <description>RCC AHB2 peripheral clock enable in Sleep and	Stop modes register 1</description>
+             <addressOffset>0x0B4</addressOffset>
+@@ -198413,7 +198413,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB2SMENR2</name>
++            <name>AHB2SMENR2</name>
+             <displayName>RCC_AHB2SMENR2</displayName>
+             <description>RCC AHB2 peripheral clock enable in Sleep and	Stop modes register 2</description>
+             <addressOffset>0x0B8</addressOffset>
+@@ -198549,7 +198549,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_AHB3SMENR</name>
++            <name>AHB3SMENR</name>
+             <displayName>RCC_AHB3SMENR</displayName>
+             <description>RCC AHB3 peripheral clock enable in Sleep and Stop modes register</description>
+             <addressOffset>0x0BC</addressOffset>
+@@ -198724,7 +198724,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB1SMENR1</name>
++            <name>APB1SMENR1</name>
+             <displayName>RCC_APB1SMENR1</displayName>
+             <description>RCC APB1 peripheral clock enable in Sleep and Stop modes	register 1</description>
+             <addressOffset>0x0C4</addressOffset>
+@@ -199065,7 +199065,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB1SMENR2</name>
++            <name>APB1SMENR2</name>
+             <displayName>RCC_APB1SMENR2</displayName>
+             <description>RCC APB1 peripheral clocks enable in Sleep and	Stop modes register 2</description>
+             <addressOffset>0x0C8</addressOffset>
+@@ -199203,7 +199203,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB2SMENR</name>
++            <name>APB2SMENR</name>
+             <displayName>RCC_APB2SMENR</displayName>
+             <description>RCC APB2 peripheral clocks enable in Sleep and Stop modes register</description>
+             <addressOffset>0x0CC</addressOffset>
+@@ -199481,7 +199481,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_APB3SMENR</name>
++            <name>APB3SMENR</name>
+             <displayName>RCC_APB3SMENR</displayName>
+             <description>RCC APB3 peripheral clock enable in Sleep and Stop modes register</description>
+             <addressOffset>0x0D0</addressOffset>
+@@ -199719,7 +199719,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_SRDAMR</name>
++            <name>SRDAMR</name>
+             <displayName>RCC_SRDAMR</displayName>
+             <description>RCC SmartRun domain peripheral autonomous mode register</description>
+             <addressOffset>0x0D8</addressOffset>
+@@ -200061,7 +200061,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CCIPR1</name>
++            <name>CCIPR1</name>
+             <displayName>RCC_CCIPR1</displayName>
+             <description>RCC peripherals independent clock configuration register 1</description>
+             <addressOffset>0x0E0</addressOffset>
+@@ -200538,7 +200538,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CCIPR2</name>
++            <name>CCIPR2</name>
+             <displayName>RCC_CCIPR2</displayName>
+             <description>RCC peripherals independent clock configuration register 2</description>
+             <addressOffset>0x0E4</addressOffset>
+@@ -200963,7 +200963,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CCIPR3</name>
++            <name>CCIPR3</name>
+             <displayName>RCC_CCIPR3</displayName>
+             <description>RCC peripherals independent clock configuration register 3</description>
+             <addressOffset>0x0E8</addressOffset>
+@@ -201234,7 +201234,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_BDCR</name>
++            <name>BDCR</name>
+             <displayName>RCC_BDCR</displayName>
+             <description>RCC backup domain control register</description>
+             <addressOffset>0x00F0</addressOffset>
+@@ -201609,7 +201609,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_CSR</name>
++            <name>CSR</name>
+             <displayName>RCC_CSR</displayName>
+             <description>RCC control/status register</description>
+             <addressOffset>0x0F4</addressOffset>
+@@ -201854,7 +201854,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_SECCFGR</name>
++            <name>SECCFGR</name>
+             <displayName>RCC_SECCFGR</displayName>
+             <description>RCC secure configuration register</description>
+             <addressOffset>0x110</addressOffset>
+@@ -202125,7 +202125,7 @@
+             </fields>
+           </register>
+           <register>
+-            <name>RCC_PRIVCFGR</name>
++            <name>PRIVCFGR</name>
+             <displayName>RCC_PRIVCFGR</displayName>
+             <description>RCC privilege configuration register</description>
+             <addressOffset>0x114</addressOffset>
