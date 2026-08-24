@@ -15,37 +15,29 @@ defaults:
     shell: bash
 
 jobs:
-  svd-validation:
+  build:
     runs-on: [ubuntu-latest]
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      with:
-        fetch-depth: 0
     - name: install python requirements
       run: pip3 install -r requirements.txt
-    - name: xmlschema-validate
-      run: find . -iname "*.svd" | xargs xmlschema-validate --schema schema/CMSIS-SVD.xsd
-
-  svd-gen:
-    runs-on: [ubuntu-latest]
-    needs: svd-validation
-    strategy:
-      matrix:
-        operating_system: [ 'mesonbuild/fedora:latest', 'mesonbuild/ubuntu-rolling', 'mesonbuild/arch:latest', 'mesonbuild/opensuse:latest' ]
-      fail-fast: false
-    container:
-      image: ${{ matrix.operating_system }}
-    steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      with:
-        fetch-depth: 0
-    - run: pip3 install -r requirements.txt
-    - name: Fixes dubious of git in github runners
+    - name: Meson Setup
       run: |
-        git config --global --add safe.directory '*'
-    - name: Meson build
+        meson setup -Dwith-test=true builddir
+    - name: Patch SVDs
       run: |
-        meson setup -Dwith-tests-only=true builddir
+        ninja -C builddir patch
+    - name: Validate SVDs
+      run: |
+        ninja -C builddir validate
+    - name: Generate Jsons
+      run: |
+        ninja -C builddir json
+    - name: Build tests
+      run: |
+        ninja -C builddir
+    - name: Run tests
+      run: |
         ninja -C builddir test
     - name: Meson postcheck
       if: failure()
