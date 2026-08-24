@@ -20,6 +20,7 @@ py3 = pymod.find_installation('python3', modules: ['svd2json', 'jinja2'])
 svd2json = find_program('svd2json')
 jinja_cli = find_program('jinja')
 patch_apply = find_program('support/meson/patch-apply.py')
+xmlschema_validate = find_program('xmlschema-validate', required: get_option('schema-validation'))
 
 targets = get_option('target')
 with_test = get_option('with-test')
@@ -36,6 +37,7 @@ endif
 
 patched_dict = {}
 json_dict = {}
+validate = []
 
 foreach t: targets
     if not svd_dict.has_key(t)
@@ -67,6 +69,10 @@ foreach t: targets
         install_data(svd_in, install_dir : get_option('datadir') / svd_install_suffix)
     endif
 
+    if xmlschema_validate.found()
+        validate += run_target(t + '-validate', command: [xmlschema_validate, '--schema', schema_files, svd_in])
+    endif
+
     json = custom_target(t + '.json',
         input: svd_in,
         output: '@BASENAME@.json',
@@ -77,6 +83,9 @@ endforeach
 
 alias_target('patch', patched_dict.values())
 alias_target('json', json_dict.values())
+if xmlschema_validate.found()
+alias_target('validate', validate)
+endif
 
 if with_test
     subdir('tests')

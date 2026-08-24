@@ -24,3 +24,4 @@ deprecated: 'with-test')
 
 option('target', type: 'array', value: [], description: 'list of target svd files to process, empty list means all')
 option('with-test', type: 'boolean', value: false, description: 'Execute auto generated test for given targets')
+option('schema-validation', type: 'feature', value: 'auto', description: 'validate svd against XML schema')
